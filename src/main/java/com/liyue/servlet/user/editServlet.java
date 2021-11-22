@@ -8,10 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.rowset.spi.SyncResolver;
 import java.io.IOException;
 
-@WebServlet("/user/register")
-public class registerServlet extends HttpServlet {
+@WebServlet("/user/editUser")
+public class editServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -26,9 +27,9 @@ public class registerServlet extends HttpServlet {
         String company = req.getParameter("company");
         String tel = req.getParameter("tel");
         String fax = req.getParameter("fax");
-
+        int userId = Integer.parseInt(req.getParameter("userId"));
         UserService userService = new UserServiceImpl();
-        userService.registe(username,password,rname,email,company,tel,fax);
-        resp.sendRedirect("/login.jsp");
+        userService.updateUser(username,password,rname,email,company,tel,fax,userId);
+        resp.sendRedirect("/user/getalluser");
     }
 }

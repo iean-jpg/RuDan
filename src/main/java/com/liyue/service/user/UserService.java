@@ -5,7 +5,12 @@ import com.liyue.pojo.user;
 import java.util.List;
 
 public interface UserService {
-    public user login(String userCode,String password);
-    public List<user> getAll();
-    public void registe(String username, String password, String rname, String email, String company, String tel, String fax);
+    user login(String userCode,String password);
+    List<user> getAll();
+    void registe(String username, String password, String rname, String email, String company, String tel, String fax);
+    user queryUser(String username);
+    user quertUser(int userId);
+    void updateUser(String username, String password, String rname, String email, String company, String tel, String fax,int userId);
+    void deleteUser(int userId);
+    void deleteUser(String userName);
 }

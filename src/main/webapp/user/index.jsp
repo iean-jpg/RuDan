@@ -10,8 +10,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 管理系统大布局 - Layui</title>
-    <link rel="stylesheet" href="./lib/layui-v2.6.3/css/layui.css">
+    <title>用户主页</title>
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css">
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -64,9 +64,6 @@
                     <a class="" href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/user/getalluser">用户列表</a></dd>
-                        <dd><a href="javascript:;">menu 2</a></dd>
-                        <dd><a href="javascript:;">menu 3</a></dd>
-                        <dd><a href="">the links</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -93,8 +90,8 @@
         底部固定区域
     </div>
 </div>
-<script src="./lib/layui-v2.6.3/layui.js"></script>
-<script src="lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="../lib/layui-v2.6.3/layui.js"></script>
+<script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script>
     $(document).ready(function(){undefined
         $("dd>a").click(function (e) {undefined

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WhiteWolf
-  Date: 2021年11月17日
-  Time: 20:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -50,6 +43,9 @@
         </form>
     </div>
     <div class="weadmin-block">
+        <button class="layui-btn" onclick="WeAdminShow('添加用户','add.jsp',600,400)">
+            <i class="layui-icon layui-icon-add-circle-fine"></i>添加
+        </button>
         <span class="fr" style="line-height:40px">共有数据：${userCount}条</span>
     </div>
     <table class="layui-table" id="memberList">
@@ -73,20 +69,20 @@
         </thead>
         <tbody>
         <c:forEach items="${userSession}" var="user">
-        <tr data-id="1">
-            <td>
-                <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id="1">
-                    <i class="layui-icon">&#xe605;</i>
-                </div>
-            </td>
-            <td>${user.getUserId()}</td>
-            <td>${user.getUserName()}</td>
-            <td>${user.getUserRname()}</td>
-            <td>${user.getUserTel()}</td>
-            <td>${user.getUserEmail()}</td>
-            <td>${user.getUserCompany()}</td>
-            <td>${user.getUserDateTime()}</td>
-            <td class="td-status">
+            <tr data-id="1">
+                <td>
+                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id="1">
+                        <i class="layui-icon">&#xe605;</i>
+                    </div>
+                </td>
+                <td>${user.getUserId()}</td>
+                <td>${user.getUserName()}</td>
+                <td>${user.getUserRname()}</td>
+                <td>${user.getUserTel()}</td>
+                <td>${user.getUserEmail()}</td>
+                <td>${user.getUserCompany()}</td>
+                <td>${user.getUserDateTime()}</td>
+                <td class="td-status">
                 <span class="layui-btn layui-btn-normal layui-btn-xs">
                     <c:choose>
                         <c:when test="${user.getUserRight()==0}">
@@ -97,16 +93,16 @@
                         </c:when>
                     </c:choose>
                 </span>
-            </td>
-<%--            <td class="td-manage">--%>
-<%--                <a title="编辑" onclick="WeAdminEdit('编辑','./edit.jsp', 1, 600, 400)" href="/user/queryUserById?userId=${user.getUserId()}">--%>
-<%--                    <i class="layui-icon layui-icon-edit"></i>--%>
-<%--                </a>--%>
-<%--                <a title="删除" onclick="member_del(this,'要删除的id')" href="/user/deleteUser?userId=${user.getUserId()}">--%>
-<%--                    <i class="layui-icon layui-icon-delete"></i>--%>
-<%--                </a>--%>
-<%--            </td>--%>
-        </tr>
+                </td>
+                <td class="td-manage">
+                    <a title="编辑" onclick="WeAdminEdit('编辑','./edit.jsp', 1, 600, 400)" href="/user/queryUserById?userId=${user.getUserId()}">
+                        <i class="layui-icon layui-icon-edit"></i>
+                    </a>
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="/user/deleteUser?userId=${user.getUserId()}">
+                        <i class="layui-icon layui-icon-delete"></i>
+                    </a>
+                </td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
@@ -121,5 +117,6 @@
 <!--<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
 <script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 <script src="../static/js/eleDel.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>

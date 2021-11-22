@@ -26,6 +26,8 @@ public class userServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService userService = new UserServiceImpl();
         List<user> userList = userService.getAll();
+        int k = userList.size();
+        req.getSession().setAttribute("userCount",k);
         req.getSession().setAttribute(Constants.USER_SESSION,userList);
         resp.sendRedirect("/user/userlist.jsp");
     }

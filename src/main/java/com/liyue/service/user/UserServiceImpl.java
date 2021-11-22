@@ -63,6 +63,75 @@ public class UserServiceImpl implements UserService{
         }
     }
 
+    @Override
+    public user queryUser(String username) {
+        Connection connection = null;
+        user user =null;
+        try {
+            connection = BaseDao.getConnection();
+            user = userDao.getUserByName(connection,username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            BaseDao.closeReasource(connection,null,null);
+        }
+        return user;
+    }
+
+    @Override
+    public user quertUser(int userId) {
+        Connection connection = null;
+        user user =null;
+        try {
+            connection = BaseDao.getConnection();
+            user = userDao.getUserById(connection,userId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            BaseDao.closeReasource(connection,null,null);
+        }
+        return user;
+    }
+
+    @Override
+    public void updateUser(String username, String password, String rname, String email, String company, String tel, String fax, int userId) {
+        Connection connection = null;
+        try {
+            connection  = BaseDao.getConnection();
+            int k = userDao.updateUser(connection,username,password,rname,email,company,tel,fax,userId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeReasource(connection,null,null);
+        }
+    }
+
+    @Override
+    public void deleteUser(int userId) {
+        Connection connection = null;
+        try {
+            connection = BaseDao.getConnection();
+            int k = userDao.delUserById(connection,userId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeReasource(connection,null,null);
+        }
+    }
+
+    @Override
+    public void deleteUser(String userName) {
+        Connection connection = null;
+        try {
+            connection = BaseDao.getConnection();
+            int k = userDao.delUserByName(connection,userName);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeReasource(connection,null,null);
+        }
+    }
+
     @Test
     public void test() {
         UserServiceImpl userService = new UserServiceImpl();

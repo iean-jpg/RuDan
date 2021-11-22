@@ -1,17 +1,15 @@
-package com.liyue.servlet.user;
+package com.liyue.servlet.admin;
 
 import com.liyue.service.user.UserService;
 import com.liyue.service.user.UserServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/user/register")
-public class registerServlet extends HttpServlet {
+public class addUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -29,6 +27,6 @@ public class registerServlet extends HttpServlet {
 
         UserService userService = new UserServiceImpl();
         userService.registe(username,password,rname,email,company,tel,fax);
-        resp.sendRedirect("/login.jsp");
+        resp.sendRedirect("/admin/getalluser");
     }
 }
