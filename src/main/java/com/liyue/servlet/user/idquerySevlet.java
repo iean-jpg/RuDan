@@ -25,6 +25,6 @@ public class idquerySevlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         user user = userService.quertUser(userId);
         req.getSession().setAttribute(Constants.USER_SESSION,user);
-        resp.sendRedirect("/user/edit.jsp");
+        resp.sendRedirect("/admin/edit.jsp");
     }
 }

@@ -40,12 +40,12 @@
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
                     <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
-                    tester
+                    ${userSession.getUserName()}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">Your Profile</a></dd>
-                    <dd><a href="">Settings</a></dd>
-                    <dd><a href="">Sign out</a></dd>
+                    <dd><a href="">个人信息</a></dd>
+                    <dd><a href="">设置</a></dd>
+                    <dd><a href="">登出</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -67,11 +67,9 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">产品管理</a>
+                    <a href="javascript:;">新闻管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">产品列表</a></dd>
-                        <dd><a href="javascript:;">list 2</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="/news/getallnews">新闻列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>
