@@ -16,7 +16,6 @@ public class CategoryDaoImpl implements CategoryDao{
     @Override
     public void addCat(Connection connection, category category) throws SQLException {
         PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
         if(connection!=null){
             String sql = "insert into category(cat_name) values(?)";
             Object[] params = {category.getCatName()};
@@ -27,7 +26,6 @@ public class CategoryDaoImpl implements CategoryDao{
     @Override
     public void delCat(Connection connection, int catId) throws SQLException {
         PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
         if(connection!=null){
             String sql = "delete from category where cat_id=?";
             Object[] params = {catId};

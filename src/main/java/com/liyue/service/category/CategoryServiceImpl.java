@@ -91,6 +91,7 @@ public class CategoryServiceImpl implements CategoryService{
     public void updateCategory(category category) {
         Connection connection = null;
         try {
+            connection = BaseDao.getConnection();
             categoryDao.updateCat(connection,category);
         } catch (SQLException throwables) {
             throwables.printStackTrace();

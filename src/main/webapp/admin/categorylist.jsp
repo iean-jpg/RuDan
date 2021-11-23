@@ -75,7 +75,7 @@
                     <a title="编辑" onclick="WeAdminEdit('编辑','/category/edit.jsp', 1, 600, 400)" href="/category/queryCat?catId=${cat.getCatId()}">
                         <i class="layui-icon layui-icon-edit"></i>
                     </a>
-                    <a title="删除" onclick="member_del(this,'要删除的id')" href="">
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="/category/delCategory?catId=${cat.getCatId()}">
                         <i class="layui-icon layui-icon-delete"></i>
                     </a>
                 </td>
