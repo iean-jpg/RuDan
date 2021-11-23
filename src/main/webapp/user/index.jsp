@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WhiteWolf
-  Date: 2021年11月17日
-  Time: 20:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,35 +10,15 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
-        <!-- 头部区域（可配合layui 已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <!-- 移动端显示 -->
-            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-                <i class="layui-icon layui-icon-spread-left"></i>
-            </li>
-
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">nav groups</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">menu 11</a></dd>
-                    <dd><a href="">menu 22</a></dd>
-                    <dd><a href="">menu 33</a></dd>
-                </dl>
-            </li>
-        </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
                     <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
-                    tester
+                    ${userSession.getUserName()}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">Your Profile</a></dd>
-                    <dd><a href="">Settings</a></dd>
-                    <dd><a href="">Sign out</a></dd>
+                    <dd><a href="/user/queryUserById?userId=${userSession.getUserId()}">个人信息</a></dd>
+                    <dd><a href="/login.jsp">退出</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -61,19 +34,30 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">用户管理</a>
+                    <a class="" href="javascript:;">用户浏览</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/user/getalluser">用户列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">新闻管理</a>
+                    <a href="javascript:;">新闻浏览</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/news/getallnews">新闻列表</a></dd>
+                        <dd><a href="/user/news/getallnews">新闻列表</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>
-                <li class="layui-nav-item"><a href="">the links</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">产品浏览</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/user/product/getallproduct">产品列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">反馈浏览</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/user/fback/getallfback">反馈列表</a></dd>
+                        <dd><a href="/fback/preAdd?userId=${userSession.getUserId()}">提交反馈</a></dd>
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>

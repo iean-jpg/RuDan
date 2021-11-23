@@ -32,10 +32,10 @@
 
 <div class="weadmin-body">
   <div class="layui-row">
-    <form class="layui-form layui-col-md12 we-search" action="" method="get">
+    <form class="layui-form layui-col-md12 we-search" action="/news/queryNewsByTitle" method="get">
       新闻搜索：
       <div class="layui-inline">
-        <input type="text" name="newsTitle" placeholder="请输入新闻标题" autocomplete="off" class="layui-input" />
+        <input type="text" name="newstitle" placeholder="请输入新闻标题" autocomplete="off" class="layui-input" />
       </div>
       <button class="layui-btn" lay-submit="" lay-filter="sreach">
         <i class="layui-icon layui-icon-search"></i>
@@ -43,9 +43,6 @@
     </form>
   </div>
   <div class="weadmin-block">
-<%--    <button class="layui-btn" onclick="WeAdminShow('添加用户','add.jsp',600,400)">--%>
-<%--      <i class="layui-icon layui-icon-add-circle-fine"></i>添加--%>
-<%--    </button>--%>
     <span class="fr" style="line-height:40px">共有数据：${newsCount}条</span>
   </div>
   <table class="layui-table" id="memberList">
@@ -71,14 +68,11 @@
         </td>
         <td>${news.getNewsTitle()}</td>
         <td>${news.getNewsDateTime()}</td>
-<%--        <td class="td-manage">--%>
-<%--          <a title="编辑" onclick="WeAdminEdit('编辑','', 1, 600, 400)" href="">--%>
-<%--            <i class="layui-icon layui-icon-edit"></i>--%>
-<%--          </a>--%>
-<%--          <a title="删除" onclick="member_del(this,'要删除的id')" href="">--%>
-<%--            <i class="layui-icon layui-icon-delete"></i>--%>
-<%--          </a>--%>
-<%--        </td>--%>
+        <td class="td-manage">
+          <a title="详情" onclick="" href="/news/queryNews?newsId=${news.getNewsId()}">
+            <i class="layui-icon layui-icon-about"></i>
+          </a>
+        </td>
       </tr>
     </c:forEach>
     </tbody>

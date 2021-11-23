@@ -63,7 +63,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">反馈管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">反馈列表</a></dd>
+                        <dd><a href="/fback/getallfback">反馈列表</a></dd>
                     </dl>
                 </li>
             </ul>

@@ -8,6 +8,15 @@ public class fback {
     private String fbackContent;
     private int userId;
     private Date fbackDateTime;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public int getFbackId() {
         return fbackId;
