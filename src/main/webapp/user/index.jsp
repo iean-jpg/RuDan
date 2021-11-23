@@ -69,7 +69,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">新闻管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="user/news/getallnews">新闻列表</a></dd>
+                        <dd><a href="/news/getallnews">新闻列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>

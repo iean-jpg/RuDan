@@ -18,24 +18,6 @@
     <div class="layui-header">
         <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
         <!-- 头部区域（可配合layui 已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <!-- 移动端显示 -->
-            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-                <i class="layui-icon layui-icon-spread-left"></i>
-            </li>
-
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">nav groups</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">menu 11</a></dd>
-                    <dd><a href="">menu 22</a></dd>
-                    <dd><a href="">menu 33</a></dd>
-                </dl>
-            </li>
-        </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
@@ -43,15 +25,9 @@
                     ${userSession.getUserName()}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">个人信息</a></dd>
-                    <dd><a href="">设置</a></dd>
-                    <dd><a href="">登出</a></dd>
+                    <dd><a href="/user/queryUserById?userId=${userSession.getUserId()}">个人信息</a></dd>
+                    <dd><a href="/login.jsp">登出</a></dd>
                 </dl>
-            </li>
-            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="javascript:;">
-                    <i class="layui-icon layui-icon-more-vertical"></i>
-                </a>
             </li>
         </ul>
     </div>
@@ -72,8 +48,24 @@
                         <dd><a href="/news/getallnews">新闻列表</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>
-                <li class="layui-nav-item"><a href="">the links</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">分类管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/category/getAllCat">分类列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">产品管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">产品列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">反馈管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">反馈列表</a></dd>
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>
@@ -84,8 +76,6 @@
     </div>
 
     <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        底部固定区域
     </div>
 </div>
 <script src="../lib/layui-v2.6.3/layui.js"></script>

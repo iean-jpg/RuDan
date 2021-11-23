@@ -1,5 +1,7 @@
 package com.liyue.dao;
 
+import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -95,4 +97,9 @@ public class BaseDao {
         return flag;
     }
 
+    @Test
+    public void test(){
+        Connection connection = getConnection();
+        System.out.println(connection);
+    }
 }
