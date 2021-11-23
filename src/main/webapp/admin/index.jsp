@@ -57,7 +57,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">产品管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">产品列表</a></dd>
+                        <dd><a href="/product/getallproduct">产品列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">

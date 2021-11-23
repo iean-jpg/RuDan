@@ -12,6 +12,15 @@ public class product {
     private String prodText;
     private Date prodDateTime;
     private int prodFirstShow;
+    private String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public int getProdId() {
         return prodId;

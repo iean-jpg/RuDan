@@ -35,14 +35,16 @@ public class ProductDaoImpl implements ProductDao{
     public List<product> getAllProduct(Connection connection) throws SQLException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
+        ResultSet resultSet1 = null;
         product product = null;
         List<product> productList= new ArrayList<>();
         if(connection!=null){
-            String sql = "select * from product";
+            String sql = "select a.cat_name,b.* from category a,product b where a.cat_id=b.cat_id";
             Object[] params = {};
             resultSet = BaseDao.execute(connection,preparedStatement,resultSet,sql,params);
             while (resultSet.next()){
                 product = new product();
+                product.setCategory(resultSet.getString("cat_name"));
                 product.setProdId(resultSet.getInt("prod_id"));
                 product.setCatId(resultSet.getInt("cat_id"));
                 product.setProdName(resultSet.getString("prod_name"));
@@ -65,11 +67,12 @@ public class ProductDaoImpl implements ProductDao{
         ResultSet resultSet = null;
         product product = null;
         if(connection!=null){
-            String sql = "select * from product where prod_id=?";
+            String sql = "select a.cat_name,b.* from category a,product b where a.cat_id=b.cat_id and b.prod_id=?";
             Object[] params = {productId};
             resultSet = BaseDao.execute(connection,preparedStatement,resultSet,sql,params);
             while (resultSet.next()){
                 product = new product();
+                product.setCategory(resultSet.getString("cat_name"));
                 product.setProdId(resultSet.getInt("prod_id"));
                 product.setCatId(resultSet.getInt("cat_id"));
                 product.setProdName(resultSet.getString("prod_name"));
@@ -91,11 +94,12 @@ public class ProductDaoImpl implements ProductDao{
         ResultSet resultSet = null;
         product product = null;
         if(connection!=null){
-            String sql = "select * from product where prod_id=?";
+            String sql = "select a.cat_name,b.* from category a,product b where a.cat_id=b.cat_id and b.prod_name=?";
             Object[] params = {productName};
             resultSet = BaseDao.execute(connection,preparedStatement,resultSet,sql,params);
             while (resultSet.next()){
                 product = new product();
+                product.setCategory(resultSet.getString("cat_name"));
                 product.setProdId(resultSet.getInt("prod_id"));
                 product.setCatId(resultSet.getInt("cat_id"));
                 product.setProdName(resultSet.getString("prod_name"));
