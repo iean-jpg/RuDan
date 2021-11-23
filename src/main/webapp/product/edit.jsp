@@ -2,16 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加产品</title>
+    <title>修改产品</title>
     <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css">
     <script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 </head>
 <body>
-<form enctype="multipart/form-data" class="layui-form" action="/product/addproduct" method="post">
+<form enctype="multipart/form-data" class="layui-form" action="/product/updateProduct?prodId=${prodSession.getProdId()}" method="post">
     <div class="layui-form-item">
         <label class="layui-form-label">产品名称</label>
         <div class="layui-input-block">
-            <input type="text" name="prodname" lay-verify="title" autocomplete="off" placeholder="请输入产品名称" class="layui-input">
+            <input value="${prodSession.getProdName()}" type="text" name="prodname" lay-verify="title" autocomplete="off" placeholder="请输入产品名称" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
@@ -27,13 +27,13 @@
     <div class="layui-form-item">
         <label class="layui-form-label">产品型号</label>
         <div class="layui-input-block">
-            <input type="text" name="prodtype" lay-verify="title" autocomplete="off" placeholder="请输入产品型号" class="layui-input">
+            <input value="${prodSession.getProdType()}" type="text" name="prodtype" lay-verify="title" autocomplete="off" placeholder="请输入产品型号" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">产品价格</label>
         <div class="layui-input-block">
-            <input type="text" name="prodprice" lay-verify="title" autocomplete="off" placeholder="请输入产品价格" class="layui-input">
+            <input value="${prodSession.getProdPrice()}" type="text" name="prodprice" lay-verify="title" autocomplete="off" placeholder="请输入产品价格" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
@@ -46,7 +46,7 @@
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">产品描述</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea" name="proddesc"></textarea>
+            <textarea placeholder="请输入内容" class="layui-textarea" name="proddesc">${prodSession.getProdText()}</textarea>
         </div>
     </div>
     <div class="layui-form">

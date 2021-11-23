@@ -32,10 +32,13 @@
 
 <div class="weadmin-body">
     <div class="layui-row">
-        <form class="layui-form layui-col-md12 we-search" action="" method="get">
+        <form class="layui-form layui-col-md12 we-search" action="/product/queryProduct" method="get">
             产品搜索：
             <div class="layui-inline">
-                <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input" />
+                <input type="text" name="prodname" placeholder="请输入产品名" autocomplete="off" class="layui-input" />
+            </div>
+            <div class="layui-inline">
+                <input type="text" name="prodtype" placeholder="请输入产品型号" autocomplete="off" class="layui-input" />
             </div>
             <button class="layui-btn" lay-submit="" lay-filter="sreach">
                 <i class="layui-icon layui-icon-search"></i>
@@ -76,11 +79,14 @@
                 <td>${product.getProdType()}</td>
                 <td>${product.getProdDateTime()}</td>
                 <td class="td-manage">
-                    <a title="编辑" onclick="WeAdminEdit('编辑','', 1, 600, 400)" href="">
+                    <a title="编辑" onclick="WeAdminEdit('编辑','', 1, 600, 400)" href="/product/preEdit?prodId=${product.getProdId()}">
                         <i class="layui-icon layui-icon-edit"></i>
                     </a>
-                    <a title="删除" onclick="member_del(this,'要删除的id')" href="">
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="/product/delProduct?$prodId=${product.getProdId()}">
                         <i class="layui-icon layui-icon-delete"></i>
+                    </a>
+                    <a title="详情" onclick="" href="/product/showdetail?prodId=${product.getProdId()}">
+                        <i class="layui-icon layui-icon-about"></i>
                     </a>
                 </td>
             </tr>

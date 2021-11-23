@@ -89,13 +89,13 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public product getProductByName(Connection connection, String productName) throws SQLException {
+    public product getProductByName(Connection connection, String productName,String productType) throws SQLException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         product product = null;
         if(connection!=null){
-            String sql = "select a.cat_name,b.* from category a,product b where a.cat_id=b.cat_id and b.prod_name=?";
-            Object[] params = {productName};
+            String sql = "select a.cat_name,b.* from category a,product b where a.cat_id=b.cat_id and b.prod_name=? and b.prod_type=?";
+            Object[] params = {productName,productType};
             resultSet = BaseDao.execute(connection,preparedStatement,resultSet,sql,params);
             while (resultSet.next()){
                 product = new product();

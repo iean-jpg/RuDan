@@ -12,7 +12,7 @@ public interface ProductService {
     //查找产品
     List<product> getAll();
     product getProductById(int prodId);
-    product getProductByName(String prodName);
+    product getProductByName(String prodName,String productType);
     //更新产品
     void updateProduct(product product);
 }

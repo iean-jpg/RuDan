@@ -72,12 +72,12 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public product getProductByName(String prodName) {
+    public product getProductByName(String prodName,String productType) {
         Connection connection = null;
         product product = null;
         try {
             connection = BaseDao.getConnection();
-            product = productDao.getProductByName(connection,prodName);
+            product = productDao.getProductByName(connection,prodName,productType);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

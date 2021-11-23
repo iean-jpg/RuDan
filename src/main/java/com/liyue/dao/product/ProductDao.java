@@ -14,7 +14,7 @@ public interface ProductDao {
     //查找产品
     List<product> getAllProduct(Connection connection) throws SQLException;
     product getProductById(Connection connection,int productId) throws SQLException;
-    product getProductByName(Connection connection,String productName) throws SQLException;
+    product getProductByName(Connection connection,String productName,String productType) throws SQLException;
     //更新产品
     void updateProduct(Connection connection,product product) throws SQLException;
 }
