@@ -1,6 +1,9 @@
 package com.liyue.servlet.user;
 
+import com.liyue.pojo.product;
 import com.liyue.pojo.user;
+import com.liyue.service.product.ProductService;
+import com.liyue.service.product.ProductServiceImpl;
 import com.liyue.service.user.UserService;
 import com.liyue.service.user.UserServiceImpl;
 import com.liyue.utils.Constants;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/user/login")
 public class LoginServlet extends HttpServlet {
@@ -26,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         String imageText = req.getParameter("captcha");
         String text = (String) req.getSession().getAttribute("text");
         UserService userService = new UserServiceImpl();
+        ProductService productService = new ProductServiceImpl();
         user user = userService.login(username,password);
         if (!text.equalsIgnoreCase(imageText)) {
             req.setAttribute("error", "验证码输入错误!");
@@ -33,11 +38,14 @@ public class LoginServlet extends HttpServlet {
         }
         if(user!=null){
             if(user.getUserRight()==0){
+                List<product> productList = productService.getAll();
                 req.getSession().setAttribute(Constants.USER_SESSION,user);
+                req.getSession().setAttribute(Constants.PROD_SESSION,productList);
                 resp.sendRedirect("/admin/index.jsp");
             }else {
+                List<product> productList = productService.getAll();
                 req.getSession().setAttribute(Constants.USER_SESSION,user);
-                System.out.println(user.getUserId());
+                req.getSession().setAttribute(Constants.PROD_SESSION,productList);
                 resp.sendRedirect("/user/index.jsp");
             }
         }else {

@@ -10,7 +10,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">分类名</label>
         <div class="layui-input-block">
-            <input value="" type="text" name="catname" lay-verify="title" autocomplete="off" placeholder="请输入酚类名称" class="layui-input">
+            <input value="" type="text" name="catname" lay-verify="title" autocomplete="off" placeholder="请输入分类名称" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">

@@ -43,7 +43,7 @@
         </form>
     </div>
     <div class="weadmin-block">
-        <button class="layui-btn" onclick="WeAdminShow('添加用户','../news/add.jsp',600,400)">
+        <button class="layui-btn" onclick="WeAdminShow('添加用户','/category/add.jsp',600,400)">
             <i class="layui-icon layui-icon-add-circle-fine"></i>添加
         </button>
         <span class="fr" style="line-height:40px">共有数据：${catCount}条</span>

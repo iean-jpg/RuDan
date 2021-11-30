@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -64,12 +65,12 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <iframe id="iframeMain" src="" style="width: 100%;height: 100%;"></iframe>
+        <iframe id="iframeMain" src="/user/welcome" style="width: 100%;height: 100%;">
+        </iframe>
     </div>
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        底部固定区域
     </div>
 </div>
 <script src="../lib/layui-v2.6.3/layui.js"></script>
