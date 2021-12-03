@@ -10,7 +10,7 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo layui-hide-xs layui-bg-black"><a href="/user/welcome">用户首页</a></div>
+        <div class="layui-logo layui-hide-xs layui-bg-black">用户首页</div>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
@@ -34,6 +34,9 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <dd><a class="" href="/user/welcome">首页</a></dd>
+                </li>
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">用户浏览</a>
                     <dl class="layui-nav-child">

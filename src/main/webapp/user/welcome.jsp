@@ -18,28 +18,22 @@
         <div carousel-item>
             <c:forEach items="${prodSession}" var="prod">
                 <c:if test="${prod.getProdFirstShow() == 1}">
-                    <a href="/product/showdetail?prodId=${prod.getProdId()}"><img src="/images/${prod.getProdImage()}"/></a>
+                    <a href="/product/showdetail?prodId=${prod.getProdId()}"><img src="/images/${prod.getProdImage()}" style="width: 100%;height: 100%"/></a>
                 </c:if>
             </c:forEach>
         </div>
     </div>
     <div class="layui-row layui-col-space15">
+        <c:forEach items="${newsSession}" var="news">
         <div class="layui-col-md6">
-            <div class="layui-panel">
-                <div style="padding: 30px;">
-                    <ul class="news">
-                        <e:forEach items="${newsSession}" var="news">
-                            <li><a href="/news/queryNews?newsId=${news.getNewsId()}">${news.getNewsTitle()}</a></li>
-                        </e:forEach>
-                    </ul>
+            <div class="layui-card">
+                <div class="layui-card-header">${news.getNewsTitle()}</div>
+                <div class="layui-card-body">
+                    ${news.getNewsContent()}
                 </div>
             </div>
         </div>
-        <div class="layui-col-md6">
-            <div class="layui-panel">
-                <div style="padding: 30px;">一个面板</div>
-            </div>
-        </div>
+        </c:forEach>
     </div>
     <script>
     layui.use('carousel', function(){
