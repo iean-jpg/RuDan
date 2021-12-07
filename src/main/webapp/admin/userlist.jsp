@@ -32,7 +32,7 @@
 
 <div class="weadmin-body">
     <div class="layui-row">
-        <form class="layui-form layui-col-md12 we-search" action="/user/queryUser" method="get">
+        <form class="layui-form layui-col-md12 we-search" action="/user/queryUserByName" method="get">
             用户搜索：
             <div class="layui-inline">
                 <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input" />

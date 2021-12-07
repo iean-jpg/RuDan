@@ -21,7 +21,7 @@ public class editServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String right = req.getParameter("right");
         String rname = req.getParameter("rname");
         String email = req.getParameter("email");
         String company = req.getParameter("company");
@@ -29,7 +29,7 @@ public class editServlet extends HttpServlet {
         String fax = req.getParameter("fax");
         int userId = Integer.parseInt(req.getParameter("userId"));
         UserService userService = new UserServiceImpl();
-        userService.updateUser(username,password,rname,email,company,tel,fax,userId);
+        userService.updateUser(username,right,rname,email,company,tel,fax,userId);
         resp.sendRedirect("/user/getalluser");
     }
 }

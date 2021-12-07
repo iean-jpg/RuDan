@@ -14,12 +14,6 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">密码</label>
-        <div class="layui-input-block">
-            <input value="${userSession.getUserPwd()}" type="text" name="password" lay-verify="title" autocomplete="off" placeholder="请输入密码" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
         <label class="layui-form-label">真实姓名</label>
         <div class="layui-input-block">
             <input value="${userSession.getUserRname()}" type="text" name="rname" lay-verify="title" autocomplete="off" placeholder="请输入真实姓名" class="layui-input">
@@ -47,6 +41,12 @@
         <label class="layui-form-label">传真地址</label>
         <div class="layui-input-block">
             <input value="${userSession.getUserFax()}" type="text" name="fax" lay-verify="title" autocomplete="off" placeholder="请输入传真地址" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <input type="radio" name="right" value="0" title="管理员">
+            <input type="radio" name="right" value="1" title="普通用户" checked="">
         </div>
     </div>
     <div class="layui-form-item">

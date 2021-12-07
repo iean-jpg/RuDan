@@ -14,11 +14,12 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
-                    <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+                    <img src="../images/头像.png" class="layui-nav-img">
                     ${userSession.getUserName()}
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="/user/queryUserById?userId=${userSession.getUserId()}">个人信息</a></dd>
+                    <dd><a href="">修改密码</a></dd>
                     <dd><a href="/login.jsp">退出</a></dd>
                 </dl>
             </li>

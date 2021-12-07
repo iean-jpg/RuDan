@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WhiteWolf
-  Date: 2021年11月17日
-  Time: 20:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -21,11 +14,12 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
-                    <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+                    <img src="../images/头像.png" class="layui-nav-img">
                     ${userSession.getUserName()}
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="/user/queryUserById?userId=${userSession.getUserId()}">个人信息</a></dd>
+                    <dd><a href="">修改密码</a></dd>
                     <dd><a href="/login.jsp">登出</a></dd>
                 </dl>
             </li>

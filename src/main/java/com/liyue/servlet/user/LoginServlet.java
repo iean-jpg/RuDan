@@ -7,6 +7,7 @@ import com.liyue.service.product.ProductServiceImpl;
 import com.liyue.service.user.UserService;
 import com.liyue.service.user.UserServiceImpl;
 import com.liyue.utils.Constants;
+import com.liyue.utils.MD5Tool;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +27,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String password = MD5Tool.encrypt(req.getParameter("password"));
         String imageText = req.getParameter("captcha");
         String text = (String) req.getSession().getAttribute("text");
         UserService userService = new UserServiceImpl();

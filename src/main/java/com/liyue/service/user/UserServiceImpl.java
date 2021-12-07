@@ -94,11 +94,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void updateUser(String username, String password, String rname, String email, String company, String tel, String fax, int userId) {
+    public void updateUser(String username, String right, String rname, String email, String company, String tel, String fax, int userId) {
         Connection connection = null;
         try {
             connection  = BaseDao.getConnection();
-            int k = userDao.updateUser(connection,username,password,rname,email,company,tel,fax,userId);
+            int k = userDao.updateUser(connection,username,right,rname,email,company,tel,fax,userId);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
