@@ -97,12 +97,25 @@ public class UserServiceImpl implements UserService{
     public void updateUser(String username, String right, String rname, String email, String company, String tel, String fax, int userId) {
         Connection connection = null;
         try {
-            connection  = BaseDao.getConnection();
-            int k = userDao.updateUser(connection,username,right,rname,email,company,tel,fax,userId);
+            connection = BaseDao.getConnection();
+            int k = userDao.updateUser(connection, username, right, rname, email, company, tel, fax, userId);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            BaseDao.closeReasource(connection,null,null);
+            BaseDao.closeReasource(connection, null, null);
+        }
+    }
+
+    @Override
+    public void updatePwd(user user) {
+        Connection connection = null;
+        try {
+            connection = BaseDao.getConnection();
+            userDao.updatePwd(connection, user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeReasource(connection, null, null);
         }
     }
 
@@ -111,7 +124,7 @@ public class UserServiceImpl implements UserService{
         Connection connection = null;
         try {
             connection = BaseDao.getConnection();
-            int k = userDao.delUserById(connection,userId);
+            int k = userDao.delUserById(connection, userId);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

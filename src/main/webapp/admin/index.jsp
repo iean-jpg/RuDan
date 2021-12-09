@@ -19,7 +19,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="/user/queryUserById?userId=${userSession.getUserId()}">个人信息</a></dd>
-                    <dd><a href="">修改密码</a></dd>
+                    <dd><a href="/user/firmupdate?userId=${userSession.getUserId()}">修改密码</a></dd>
                     <dd><a href="/login.jsp">登出</a></dd>
                 </dl>
             </li>

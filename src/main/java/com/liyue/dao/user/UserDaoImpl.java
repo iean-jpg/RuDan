@@ -140,11 +140,25 @@ public class UserDaoImpl implements userDao{
     public int updateUser(Connection connection, String username, String right, String rname, String email, String company, String tel, String fax, int userId) throws SQLException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        if(connection!=null){
-            int k =0;
-            String sql ="update user set user_name=?,user_right=?,user_rname=?,user_email=?,user_company=?,user_tel=?,user_fax=? where user_id=?";
-            Object[] params = {username,right,rname,email,company,tel,fax,userId};
-            k = BaseDao.execute(connection,sql,params,preparedStatement);
+        if (connection != null) {
+            int k = 0;
+            String sql = "update user set user_name=?,user_right=?,user_rname=?,user_email=?,user_company=?,user_tel=?,user_fax=? where user_id=?";
+            Object[] params = {username, right, rname, email, company, tel, fax, userId};
+            k = BaseDao.execute(connection, sql, params, preparedStatement);
+            return k;
+        }
+        return 0;
+    }
+
+    @Override
+    public int updatePwd(Connection connection, user user) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        if (connection != null) {
+            int k = 0;
+            String sql = "update user set user_pwd=? where user_id=?";
+            Object[] params = {user.getUserPwd(), user.getUserId()};
+            k = BaseDao.execute(connection, sql, params, preparedStatement);
             return k;
         }
         return 0;
@@ -154,7 +168,7 @@ public class UserDaoImpl implements userDao{
     public int delUserById(Connection connection, int userId) throws SQLException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        if(connection != null){
+        if (connection != null) {
             int k = 0;
             String sql = "delete from user where user_id = ?";
             Object[] params = {userId};

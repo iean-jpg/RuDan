@@ -18,8 +18,11 @@ public interface userDao {
     user getUserByName(Connection connection,String username) throws SQLException;
     //更新用户
     int updateUser(Connection connection, String username, String right, String rname, String email, String company, String tel, String fax, int userId) throws SQLException;
+
+    int updatePwd(Connection connection, user user) throws SQLException;
+
     //删除用户
-    int delUserById(Connection connection,int userId) throws SQLException;
+    int delUserById(Connection connection, int userId) throws SQLException;
     int delUserByName(Connection connection,String userName) throws SQLException;
 }
 

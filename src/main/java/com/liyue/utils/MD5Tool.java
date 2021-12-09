@@ -3,7 +3,6 @@ package com.liyue.utils;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -36,6 +35,6 @@ public class MD5Tool {
     public void test(){
         String password = "12345";
         String p = encrypt(password);
-        System.out.println(convert(p));
+        System.out.println(p);
     }
 }
