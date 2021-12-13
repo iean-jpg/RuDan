@@ -26,14 +26,19 @@
         }
     </style>
     <script type="text/javascript">
-        $(function () {
-            $('#myTabs a').click(function (e) {
-                $(this).tab('show')
+        function a() {
+            $.ajax({
+                url: "/welcome",//servlet文件的名称
+                type: "GET",
             });
-        })
+            $(function () {
+                $('#myTabs a').click(function (e) {
+                    $(this).tab('show')
+                });
+            })
     </script>
 </head>
-<body>
+<body onload="a()">
 <!-- Static navbar -->
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
@@ -49,14 +54,16 @@
     </div>
 </div>
 <div class="container">
-    <div class="layui-carousel" id="show" style="margin:0 auto">
+    <div class="layui-carousel" id="test1">
         <div carousel-item>
-            <c:forEach items="${prodSession}" var="prod">
-                <c:if test="${prod.getProdFirstShow() == 1}">
-                    <a href="/product/showdetail?prodId=${prod.getProdId()}"><img src="/images/${prod.getProdImage()}"
-                                                                                  style="width: 100%;height: 100%"/></a>
-                </c:if>
-            </c:forEach>
+            <C:forEach items="${newsSession}" var="news">
+                <div class="jumbotron">
+                    <h1>${news.getNewsTitle()}</h1>
+                    <p>...</p>
+                    <p><a class="btn btn-primary btn-lg" href="/news/queryNews?newsId=${news.getNewsId()}"
+                          role="button">了解更多</a></p>
+                </div>
+            </C:forEach>
         </div>
     </div>
     <div class="row">
@@ -77,8 +84,6 @@
             </div>
         </C:forEach>
     </div>
-
-
     <nav class="center">
         <ul class="pagination  pagination-lg">
             <li>
@@ -94,15 +99,13 @@
             </li>
         </ul>
     </nav>
-
 </div>
 <script>
     layui.use('carousel', function () {
         var carousel = layui.carousel;
         carousel.render({
-            elem: '#show'
+            elem: '#test1'
             , width: '100%' //设置容器宽度
-            , height: '50%'
             , arrow: 'always' //始终显示箭头
         });
     });

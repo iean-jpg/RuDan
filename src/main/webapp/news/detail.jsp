@@ -18,5 +18,6 @@
 </fieldset>
 <blockquote class="layui-elem-quote">${newsSession.getNewsContent()}</blockquote>
 <span class="layui-word-aux" id="test6">${newsSession.getNewsDateTime()}</span>
+<a href="javascript:history.go(-1);">返回上一页</a>
 </body>
 </html>

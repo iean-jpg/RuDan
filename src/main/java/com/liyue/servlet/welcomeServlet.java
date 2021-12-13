@@ -1,9 +1,9 @@
 package com.liyue.servlet;
 
-import com.liyue.pojo.category;
+import com.liyue.pojo.news;
 import com.liyue.pojo.product;
-import com.liyue.service.category.CategoryService;
-import com.liyue.service.category.CategoryServiceImpl;
+import com.liyue.service.news.NewsService;
+import com.liyue.service.news.NewsServiceImpl;
 import com.liyue.service.product.ProductService;
 import com.liyue.service.product.ProductServiceImpl;
 import com.liyue.utils.Constants;
@@ -26,11 +26,11 @@ public class welcomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ProductService productService = new ProductServiceImpl();
-        CategoryService categoryService = new CategoryServiceImpl();
-        List<category> categoryList = categoryService.getAll();
+        NewsService newsService = new NewsServiceImpl();
+        List<news> newsList = newsService.getNewsList();
         List<product> productList = productService.getAll();
         req.getSession().setAttribute(Constants.PROD_SESSION, productList);
-        req.getSession().setAttribute(Constants.CAT_SESSION, categoryList);
+        req.getSession().setAttribute(Constants.NEWS_SESSION, newsList);
         resp.sendRedirect("/index.jsp");
     }
 }
