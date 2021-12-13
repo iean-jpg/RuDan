@@ -42,16 +42,19 @@
                     <h1>用户登录</h1>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" lay-verify="required|account" placeholder="请输入用户名" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="text" name="username" lay-verify="required|account" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="password" lay-verify="required|password" placeholder="请输入密码" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-password"></label>
+                    <input type="password" name="password" lay-verify="required|password" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-vercode" for="captcha"></label>
-                    <input type="text" name="captcha" lay-verify="required|captcha" placeholder="图形验证码" autocomplete="off" class="layui-input verification captcha" value="">
+                    <label class="layui-icon layui-icon-vercode"></label>
+                    <input type="text" name="captcha" lay-verify="required|captcha" placeholder="图形验证码"
+                           autocomplete="off" class="layui-input verification captcha" value="">
                     <div class="captcha-img">
                         <img id="captchaPic" src="/VerifyCodeServlet">
                     </div>
@@ -78,15 +81,11 @@
         document.getElementsByTagName("img")[0].src =
             "/VerifyCodeServlet?time=" + new Date().getTime();
     };
-
-
     layui.use(['form'], function () {
         var form = layui.form,
             layer = layui.layer;
-
         // 登录过期的时候，跳出ifram框架
         if (top.location != self.location) top.location = self.location;
-
         // 粒子线条背景
         $(document).ready(function(){
             $('.layui-container').particleground({

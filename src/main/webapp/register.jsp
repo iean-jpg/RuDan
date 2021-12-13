@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WhiteWolf
-  Date: 2021年11月21日
-  Time: 20:38
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %><% String path=request.getContextPath(); %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% String path = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>登陆</title>
+    <title>注册</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -48,39 +42,48 @@
                     <h1>用户注册</h1>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="email" name="email" lay-verify="required|account" placeholder="邮箱" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="email" name="email" lay-verify="required|account" placeholder="邮箱" autocomplete="off"
+                           class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="number" name="tel" lay-verify="required|account" placeholder="电话" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="number" name="tel" lay-verify="required|account" placeholder="电话" autocomplete="off"
+                           class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="company" lay-verify="required|account" placeholder="公司" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="text" name="company" lay-verify="required|account" placeholder="公司" autocomplete="off"
+                           class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="rname" lay-verify="required|account" placeholder="真实姓名" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="text" name="rname" lay-verify="required|account" placeholder="真实姓名" autocomplete="off"
+                           class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="fax" lay-verify="required|account" placeholder="传真地址" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="text" name="fax" lay-verify="required|account" placeholder="传真地址" autocomplete="off"
+                           class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" lay-verify="required|account" placeholder="请输入用户名" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-username"></label>
+                    <input type="text" name="username" lay-verify="required|account" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="password" lay-verify="required|password" placeholder="请输入密码" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-password"></label>
+                    <input type="password" name="password" lay-verify="required|password" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="pwdconfirm" lay-verify="required|password" placeholder="请确认密码" autocomplete="off" class="layui-input" value="">
+                    <label class="layui-icon layui-icon-password"></label>
+                    <input type="password" name="pwdconfirm" lay-verify="required|password" placeholder="请确认密码"
+                           autocomplete="off" class="layui-input" value="">
                 </div>
                 <div class="layui-form-item">
-                    <input type="submit" class="layui-btn layui-btn layui-btn-normal layui-btn-fluid" value="注册"></input>
+                    <input type="submit" class="layui-btn layui-btn layui-btn-normal layui-btn-fluid"
+                           value="注册"></input>
                 </div>
                 <a href="./login.jsp" class="forget-password">已有账号!立即登录</a>
             </form>
@@ -91,15 +94,9 @@
 <script src="<%=path%>/lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 <script src="<%=path%>/lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
 <script>
-
-
     layui.use(['form'], function () {
         var form = layui.form,
             layer = layui.layer;
-
-        // 登录过期的时候，跳出ifram框架
-        if (top.location != self.location) top.location = self.location;
-
         // 粒子线条背景
         $(document).ready(function(){
             $('.layui-container').particleground({
@@ -107,6 +104,7 @@
                 lineColor:'#7ec7fd'
             });
         });
+    });
 </script>
 </body>
 </html>
