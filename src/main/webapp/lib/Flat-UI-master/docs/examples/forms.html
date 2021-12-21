@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flat UI Free</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Loading Bootstrap -->
+  <link href="../../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Loading Flat UI -->
+  <link href="../../dist/css/flat-ui.css" rel="stylesheet">
+
+  <link href="../../dist/img/favicon.ico" rel="shortcut icon">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+  <!--[if lt IE 9]>
+  <script src="../../dist/js/vendor/html5shiv.js"></script>
+  <script src="../../dist/js/vendor/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<style>
+  body {
+    padding-bottom: 200px;
+  }
+</style>
+
+<div class="container">
+  <h4>Forms</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Basic Form</h4>
+      <form role="form">
+        <legend>Form Legend</legend>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input id="exampleInputFile" type="file">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <label class="checkbox" for="checkbox1">
+          <input data-toggle="checkbox" id="checkbox1" required type="checkbox" value="">
+          Unchecked
+        </label>
+        <button class="btn btn-default" type="submit">Submit</button>
+      </form>
+    </div><!-- /.col-md-12 -->
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Inline Form</h4>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input class="form-control" id="exampleInputEmail2" placeholder="Enter email" type="email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword2">Password</label>
+          <input class="form-control" id="exampleInputPassword2" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+          <label class="checkbox" for="checkbox2">
+            <input data-toggle="checkbox" id="checkbox2" required type="checkbox" value="">
+            Remember me
+          </label>
+        </div>
+        <button class="btn btn-default" type="submit">Sign in</button>
+      </form>
+    </div><!-- /.col-md-12 -->
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Horizontal form</h4>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="inputEmail1">Email</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="inputEmail1" placeholder="Email" type="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="inputPassword1">Password</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="inputPassword1" placeholder="Password" type="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <label class="checkbox" for="checkbox3">
+              <input data-toggle="checkbox" id="checkbox3" required type="checkbox" value="">
+              Remember me
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn btn-default" type="submit">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div><!-- /.col-md-12 -->
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Inputs</h4>
+      <form action="#" class="form">
+        <div class="form-group">
+          <input class="form-control" placeholder="Text input" type="text">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="checkbox" for="checkbox4">
+            <input checked data-toggle="checkbox" id="checkbox4" required type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+          <label class="radio" for="radio4a">
+            <input checked data-toggle="radio" id="radio4a" name="optionsRadios" required type="radio" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+          <label class="radio" for="radio4b">
+            <input data-toggle="radio" id="radio4b" name="optionsRadios" required type="radio" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+          <label class="radio" for="radio4c">
+            <input data-toggle="radio" id="radio4c" name="optionsRadios" required type="radio" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="checkbox checkbox-inline" for="checkbox5a">
+            <input checked data-toggle="checkbox" id="checkbox5a" required type="checkbox" value=""> 1
+          </label>
+          <label class="checkbox checkbox-inline" for="checkbox5b">
+            <input data-toggle="checkbox" id="checkbox5b" required type="checkbox" value=""> 2
+          </label>
+          <label class="checkbox checkbox-inline" for="checkbox5c">
+            <input data-toggle="checkbox" id="checkbox5c" required type="checkbox" value=""> 3
+          </label>
+        </div>
+        <div class="form-group">
+          <select class="form-control select select-default" data-toggle="select">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control multiselect multiselect-default mrs mbm" data-toggle="select" multiple>
+            <option selected value="0">1 option</option>
+            <option value="1">2 option</option>
+            <option selected value="2">3 option</option>
+            <option value="3">4 option</option>
+            <option value="4">5 option</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Static control</h4>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Email</label>
+          <div class="col-lg-10">
+            <p class="form-control-static">email@example.com</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="inputPassword">Password</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="inputPassword" placeholder="Password" type="password">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Disabled Input</h4>
+      <form action="#" class="form">
+        <div class="form-group">
+          <input class="form-control" disabled id="disabledInput" placeholder="Disabled input here..." type="text">
+        </div>
+      </form>
+    </div>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Disabled fieldsets</h4>
+      <form class="form-inline" role="form">
+        <fieldset disabled>
+          <div class="form-group">
+            <label for="disabledTextInput">Disabled input</label>
+            <input class="form-control" id="disabledTextInput" placeholder="Disabled input" type="text">
+          </div>
+          <div class="form-group">
+            <label for="disabledSelect">Disabled select menu</label>
+            <select class="form-control" id="disabledSelect">
+              <option>Disabled select</option>
+            </select>
+          </div>
+          <label class="checkbox checkbox-inline" for="checkbox6">
+            <input checked data-toggle="checkbox" id="checkbox6" required type="checkbox" value=""> Can't check this
+          </label>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Validation states</h4>
+      <div class="form-group has-success">
+        <label class="control-label" for="inputSuccess">Input with success</label>
+        <input class="form-control" id="inputSuccess" type="text">
+      </div>
+      <div class="form-group has-warning">
+        <label class="control-label" for="inputWarning">Input with warning</label>
+        <input class="form-control" id="inputWarning" type="text">
+      </div>
+      <div class="form-group has-error">
+        <label class="control-label" for="inputError">Input with error</label>
+        <input class="form-control" id="inputError" type="text">
+      </div>
+    </div>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Control sizing</h4>
+      <h6>Height sizing</h6>
+      <div class="form-group">
+        <input class="form-control input-hg" placeholder=".input-lg" type="text">
+      </div>
+      <div class="form-group">
+        <input class="form-control input-lg" placeholder=".input-lg" type="text">
+      </div>
+      <div class="form-group">
+        <input class="form-control" placeholder="Default input" type="text">
+      </div>
+      <div class="form-group">
+        <input class="form-control input-sm" placeholder=".input-sm" type="text">
+      </div>
+
+      <div class="form-group">
+        <select class="form-control select select-default select-hg" data-toggle="select">
+          <optgroup label="Profile">
+            <option value="0">My Profile</option>
+            <option value="1">My Friends</option>
+          </optgroup>
+          <optgroup label="System">
+            <option value="2">Messages</option>
+            <option value="3">My Settings</option>
+            <option class="highlighted" value="4">Logout</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control select select-default select-lg" data-toggle="select">
+          <optgroup label="Profile">
+            <option value="0">My Profile</option>
+            <option value="1">My Friends</option>
+          </optgroup>
+          <optgroup label="System">
+            <option value="2">Messages</option>
+            <option value="3">My Settings</option>
+            <option class="highlighted" value="4">Logout</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control select select-default" data-toggle="select">
+          <optgroup label="Profile">
+            <option value="0">My Profile</option>
+            <option value="1">My Friends</option>
+          </optgroup>
+          <optgroup label="System">
+            <option value="2">Messages</option>
+            <option value="3">My Settings</option>
+            <option class="highlighted" value="4">Logout</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control select select-default select-sm" data-toggle="select">
+          <optgroup label="Profile">
+            <option value="0">My Profile</option>
+            <option value="1">My Friends</option>
+          </optgroup>
+          <optgroup label="System">
+            <option value="2">Messages</option>
+            <option value="3">My Settings</option>
+            <option class="highlighted" value="4">Logout</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+  <h6>Form group sizing</h6>
+  <form class="form-horizontal" role="form">
+    <div class="form-group form-group-hg">
+      <label class="col-sm-2 control-label" for="formGroupInputHuge">Huge label</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="formGroupInputHuge" placeholder="Huge input" type="text">
+      </div>
+    </div>
+    <div class="form-group form-group-lg">
+      <label class="col-sm-2 control-label" for="formGroupInputLarge">Large label</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="formGroupInputLarge" placeholder="Large input" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="formGroupInputDefault">Default label</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="formGroupInputDefault" placeholder="Default input" type="text">
+      </div>
+    </div>
+    <div class="form-group form-group-sm">
+      <label class="col-sm-2 control-label" for="formGroupInputSmall">Small label</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="formGroupInputSmall" placeholder="Small input" type="text">
+      </div>
+    </div>
+  </form>
+  <h6>Column sizing</h6>
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="form-group">
+        <input class="form-control" placeholder=".col-lg-2" type="text">
+      </div><!-- /.form-group -->
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+        <input class="form-control" placeholder=".col-lg-3" type="text">
+      </div><!-- /.form-group -->
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <input class="form-control" placeholder=".col-lg-4" type="text">
+      </div><!-- /.form-group -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Help text</h4>
+      <form class="form">
+        <input class="form-control" type="text">
+        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Input groups</h4>
+      <h6>Basic example</h6>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input class="form-control" placeholder="Username" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" type="text">
+          <span class="input-group-addon">.00</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input class="form-control" type="text">
+          <span class="input-group-addon">.00</span>
+        </div>
+      </div>
+      <h6>Sizing</h6>
+      <div class="form-group">
+        <div class="input-group input-group-hg">
+          <span class="input-group-addon">@</span>
+          <input class="form-control input-hg" placeholder="Username" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">@</span>
+          <input class="form-control input-lg" placeholder="Username" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input class="form-control" placeholder="Username" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon">@</span>
+          <input class="form-control" placeholder="Username" type="text">
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /.row -->
+  <h6>Button addons</h6>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+          <input class="form-control" type="text">
+        </div><!-- /input-group -->
+      </div>
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" type="text">
+          <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+        </div><!-- /input-group -->
+      </div><!-- /.form-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  <h6>Buttons with dropdowns</h6>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Action <span
+              class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+          <input class="form-control" type="text">
+        </div><!-- /input-group -->
+      </div><!-- /.form-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Action <span
+              class="caret"></span></button>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+      </div><!-- /.form-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  <h6>Segmented buttons</h6>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button class="btn btn-default" tabindex="-1" type="button">Action</button>
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" type="button">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <input class="form-control" type="text">
+        </div><!-- /.input-group -->
+      </div><!-- /.form-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default" tabindex="-1" type="button">Action</button>
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" type="button">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div><!-- /.input-group -->
+      </div><!-- /.form-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../dist/js/vendor/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../dist/js/flat-ui.min.js"></script>
+
+<script src="../assets/js/application.js"></script>
+
+</body>
+</html>

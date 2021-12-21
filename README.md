@@ -10,3 +10,7 @@
         username=
         password=
 ```
+
+# 数据库说明
+
+数据库版本为8,sql文件储存在resources文件夹下，只有表没有数据。

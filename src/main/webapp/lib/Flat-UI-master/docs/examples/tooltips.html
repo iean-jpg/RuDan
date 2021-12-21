@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flat UI Free</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Loading Bootstrap -->
+  <link href="../../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Loading Flat UI -->
+  <link href="../../dist/css/flat-ui.css" rel="stylesheet">
+
+  <link href="../../dist/img/favicon.ico" rel="shortcut icon">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+  <!--[if lt IE 9]>
+  <script src="../../dist/js/vendor/html5shiv.js"></script>
+  <script src="../../dist/js/vendor/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+  <h4>Tooltips</h4>
+
+  <h6>Text Example</h6>
+
+  <p class="muted">Tight pants next level keffiyeh <a data-toggle="tooltip" href="#" title="Default tooltip">you
+    probably</a>
+    haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan,
+    mcsweeney's fixie sustainable quinoa 8-bit american apparel <a data-toggle="tooltip" href="#"
+                                                                   title="Another tooltip">have a</a>
+    terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg
+    marfa,
+    four loko mcsweeney's cleanse vegan chambray. A really ironic artisan
+    <a data-toggle="tooltip" href="#" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy
+    Austin <a data-original-title="The last tip!" data-toggle="tooltip" href="#" title="">twitter handle</a> freegan
+    cred raw denim single-origin coffee viral.
+  </p>
+
+  <h6>Four directions</h6>
+
+  <button class="btn btn-default mrs" data-original-title="Tooltip on left" data-placement="left" data-toggle="tooltip"
+          title="" type="button">Tooltip on left
+  </button>
+  <button class="btn btn-default mrs" data-placement="top" data-toggle="tooltip" title="Tooltip on top" type="button">
+    Tooltip on top
+  </button>
+  <button class="btn btn-default mrs" data-placement="bottom" data-toggle="tooltip" title="Tooltip on bottom"
+          type="button">Tooltip on bottom
+  </button>
+  <button class="btn btn-default mrs" data-placement="right" data-toggle="tooltip" title="Tooltip on right"
+          type="button">Tooltip on right
+  </button>
+
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../dist/js/vendor/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../dist/js/flat-ui.min.js"></script>
+
+<script>
+  $(function () {
+    $('[data-toggle=tooltip]').tooltip();
+  });
+</script>
+
+</body>
+</html>

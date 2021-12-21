@@ -1,0 +1,405 @@
+---
+layout: default
+title: Customize and download
+slug: customize
+lead: Customize Bootstrap's components, Less variables, and jQuery plugins to get your very own version.
+---
+
+
+<!-- less.js isn't IE8-compatible and throws an exception during initialization, so our Blob compatibility check and error messaging code never get called in that case.
+  So we use a conditional comment instead to inform folks about the lack of IE8 support.
+-->
+<!--[if lt IE 9]>
+<style>
+  .bs-customizer,
+  .bs-customizer-import,
+  .bs-docs-sidebar {
+    display: none;
+  }
+</style>
+<div class="alert alert-danger">
+  <strong>The Bootstrap Customizer does not support IE9 and below.</strong><br>
+  Please take a second to <a href="http://browsehappy.com/">upgrade to a more modern browser</a>.
+</div>
+<![endif]-->
+
+<!-- Customizer form -->
+
+<div class="alert alert-warning alert-dismissible" id="defaults-change-alert" role="alert">
+  <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Heads up!</strong> The default value for <code>@brand-primary</code> has changed in the latest release to
+  improve contrast and accessibility. Please double check your compiled CSS when upgrading.
+</div>
+
+<div class="bs-docs-section bs-customizer-import">
+  <div class="bs-dropzone" id="import-drop-target">
+    <div class="import-header">
+      <span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
+    </div>
+    <p class="lead">Have an existing configuration? Upload your <code>config.json</code> to import it.</p>
+    <p>Drag and drop here, or <label class="btn-link" id="import-manual-trigger">manually upload<input class="hidden"
+                                                                                                       id="import-file-select"
+                                                                                                       type="file"></label>.
+    </p>
+    <hr>
+    <p><strong>Don't have one?</strong> That's okay—just start customizing the fields below.</p>
+  </div>
+</div>
+
+<form class="bs-customizer">
+  <div class="bs-docs-section" id="less-section">
+    <button class="btn btn-default toggle" type="button">Toggle all</button>
+    <h1 class="page-header" id="less">Less files</h1>
+
+    <p class="lead">Choose which Less files to compile into your custom build of Bootstrap. Not sure which files to use?
+      Read through the <a href="../css/">CSS</a> and <a href="../components/">Components</a> pages in the docs.</p>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <h3>Common CSS</h3>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="print.less">
+            Print media styles
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="type.less">
+            Typography
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="code.less">
+            Code
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="grid.less">
+            Grid system
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="tables.less">
+            Tables
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependents="navbar.less,input-groups.less" type="checkbox" value="forms.less">
+            Forms
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependents="button-groups.less" type="checkbox" value="buttons.less">
+            Buttons
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="responsive-utilities.less">
+            Responsive utilities
+          </label>
+        </div>
+      </div><!-- .col-xs-6 .col-sm-4 -->
+
+      <div class="col-xs-6 col-sm-4">
+        <h3>Components</h3>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="glyphicons.less">
+            Glyphicons
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependencies="buttons.less" type="checkbox" value="button-groups.less">
+            Button groups
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependencies="forms.less" type="checkbox" value="input-groups.less">
+            Input groups
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependents="navbar.less" type="checkbox" value="navs.less">
+            Navs
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependencies="forms.less,navs.less" type="checkbox" value="navbar.less">
+            Navbar
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="breadcrumbs.less">
+            Breadcrumbs
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="pagination.less">
+            Pagination
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="pager.less">
+            Pager
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="labels.less">
+            Labels
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="badges.less">
+            Badges
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="jumbotron.less">
+            Jumbotron
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="thumbnails.less">
+            Thumbnails
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="alerts.less">
+            Alerts
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="progress-bars.less">
+            Progress bars
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="media.less">
+            Media items
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="list-group.less">
+            List groups
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="panels.less">
+            Panels
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="responsive-embed.less">
+            Responsive embed
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="wells.less">
+            Wells
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="close.less">
+            Close icon
+          </label>
+        </div>
+      </div><!-- .col-xs-6 .col-sm-4 -->
+
+      <div class="col-xs-6 col-sm-4">
+        <h3>JavaScript components</h3>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="component-animations.less">
+            Component animations (for JS)
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="dropdowns.less">
+            Dropdowns
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="tooltip.less">
+            Tooltips
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="popovers.less">
+            Popovers
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="modals.less">
+            Modals
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="carousel.less">
+            Carousel
+          </label>
+        </div>
+      </div><!-- .col-xs-6 .col-sm-4 -->
+    </div><!-- /.row -->
+  </div>
+
+  <div class="bs-docs-section" id="plugin-section">
+    <button class="btn btn-default toggle" type="button">Toggle all</button>
+    <h1 class="page-header" id="plugins">jQuery plugins</h1>
+
+    <p class="lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to
+      include? Read the <a href="../javascript/">JavaScript</a> page in the docs.</p>
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>Linked to components</h4>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="alert.js">
+            Alert dismissal
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="button.js">
+            Advanced buttons
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="carousel.js">
+            Carousel functionality
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="dropdown.js">
+            Dropdowns
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="modal.js">
+            Modals
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="tooltip.js">
+            Tooltips
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked data-dependencies="tooltip.js" type="checkbox" value="popover.js">
+            Popovers <small>(requires Tooltips)</small>
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="tab.js">
+            Togglable tabs
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h4>Magic</h4>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="affix.js">
+            Affix
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="collapse.js">
+            Collapse
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="scrollspy.js">
+            Scrollspy
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input checked type="checkbox" value="transition.js">
+            Transitions <small>(required for any kind of animation)</small>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Produces two files</h4>
+      <p>All checked plugins will be compiled into a readable <code>bootstrap.js</code> and a minified <code>bootstrap.min.js</code>.
+        We recommend you use the minified version in production.</p>
+    </div>
+
+    <div class="bs-callout bs-callout-danger">
+      <h4>jQuery required</h4>
+      <p>All plugins require the latest version of <a href="http://jquery.com/" target="_blank">jQuery</a> to be
+        included.</p>
+    </div>
+  </div>
+
+  <div class="bs-docs-section" id="less-variables-section">
+    <button class="btn btn-default toggle" type="button">Reset to defaults</button>
+    <h1 class="page-header" id="less-variables">Less variables</h1>
+
+    <p class="lead">Customize Less variables to define colors, sizes and more inside your custom CSS stylesheets.</p>
+    {% include customizer-variables.html %}
+  </div>
+
+  <div class="bs-docs-section">
+    <h1 class="page-header" id="download">Download</h1>
+
+    <p class="lead">Hooray! Your custom version of Bootstrap is now ready to be compiled. Just click the button below to
+      finish the process.</p>
+    <div class="alert alert-warning alert-dismissible fade in" id="firefox-customizer-alert" role="alert">
+      <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span
+        aria-hidden="true">&times;</span></button>
+      <h4>Warning for Firefox users!</h4>
+      <p>Due to a possible browser bug, the customizer download randomly fails in Firefox. If this happens to you, we
+        advise either retrying in Firefox or using one of the other browsers supported by the Customizer (Chrome or
+        IE10+).</p>
+    </div>
+    <div class="bs-customize-download">
+      <button class="btn btn-block btn-lg btn-outline" disabled id="btn-compile"
+              onclick="ga('send', 'event', 'Customize', 'Download', 'Customize and Download');" type="submit">Compile
+        and Download
+      </button>
+    </div>
+  </div><!-- /download -->
+</form>
